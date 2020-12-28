@@ -35,7 +35,7 @@ public class Application {
         return new RouteBuilder() {
             public void configure()  {
 
-                from("undertow:http://localhost:8082/hi?allowedRoles=role02")
+                from("undertow:http://0.0.0.0:8082/hi?allowedRoles=role02")
                         .transform(simple("Hello ${in.header." + SpringSecurityProvider.PRINCIPAL_NAME_HEADER + "}!"))
                         .log("content: ${body}");
 
